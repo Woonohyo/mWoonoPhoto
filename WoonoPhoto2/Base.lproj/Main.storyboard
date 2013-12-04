@@ -131,7 +131,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onLoginButton:" destination="Aix-0s-YQw" eventType="touchUpInside" id="igD-uB-o21"/>
-                                    <segue destination="hht-AG-WXs" kind="push" identifier="loginCheck" id="orm-UR-KaU"/>
+                                    <segue destination="hht-AG-WXs" kind="push" id="Ifr-54-Xdc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsA-Bd-mQv">
@@ -176,30 +176,33 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Photo Stream" id="Nf6-td-DcQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="G81-9r-cMb" kind="push" identifier="Comments" id="fJh-vw-RpS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcG-MB-hYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="671" y="371"/>
+            <point key="canvasLocation" x="609" y="371"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="zvr-lP-taO">
+        <!--Table View Controller - Comments-->
+        <scene sceneID="lgR-s5-WOY">
             <objects>
-                <viewController id="0GZ-eY-UmJ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JUQ-FY-0Yr"/>
-                        <viewControllerLayoutGuide type="bottom" id="tgw-S3-Lfs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="AKi-BO-Ll3">
+                <tableViewController id="G81-9r-cMb" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Vi4-do-TcH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Pgd-QZ-IiV"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="G81-9r-cMb" id="S7I-zy-HIf"/>
+                            <outlet property="delegate" destination="G81-9r-cMb" id="Xuv-Py-GsG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Comments" id="XTZ-Gm-GQl"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ElD-rU-uxh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V0g-zr-Gx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1116" y="371"/>
+            <point key="canvasLocation" x="973" y="374"/>
         </scene>
     </scenes>
     <resources>

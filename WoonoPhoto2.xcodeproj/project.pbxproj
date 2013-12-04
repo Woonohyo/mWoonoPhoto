@@ -31,6 +31,7 @@
 		F158E32C184EC44B002916FA /* Usami.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F158E32B184EC44B002916FA /* Usami.jpg */; };
 		F158E32F184ECE6C002916FA /* NXDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F158E32E184ECE6C002916FA /* NXDataModel.m */; };
 		F158E334184F0B41002916FA /* NXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F158E333184F0B41002916FA /* NXTableViewController.m */; };
+		F158E337184F1F38002916FA /* NXPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F158E336184F1F38002916FA /* NXPhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		F158E32E184ECE6C002916FA /* NXDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDataModel.m; sourceTree = "<group>"; };
 		F158E332184F0B41002916FA /* NXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTableViewController.h; sourceTree = "<group>"; };
 		F158E333184F0B41002916FA /* NXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXTableViewController.m; sourceTree = "<group>"; };
+		F158E335184F1F38002916FA /* NXPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXPhotoViewController.h; sourceTree = "<group>"; };
+		F158E336184F1F38002916FA /* NXPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXPhotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 				F103D4F11845D262006AAD1B /* NXAppDelegate.m */,
 				F158E332184F0B41002916FA /* NXTableViewController.h */,
 				F158E333184F0B41002916FA /* NXTableViewController.m */,
+				F158E335184F1F38002916FA /* NXPhotoViewController.h */,
+				F158E336184F1F38002916FA /* NXPhotoViewController.m */,
 				F103D4F31845D262006AAD1B /* Main.storyboard */,
 				F103D51A1845D8EC006AAD1B /* NXSecondViewController.m */,
 				F103D5191845D8EC006AAD1B /* NXSecondViewController.h */,
@@ -306,6 +311,7 @@
 				F103D4F21845D262006AAD1B /* NXAppDelegate.m in Sources */,
 				F158E334184F0B41002916FA /* NXTableViewController.m in Sources */,
 				F103D4EE1845D262006AAD1B /* main.m in Sources */,
+				F158E337184F1F38002916FA /* NXPhotoViewController.m in Sources */,
 				F103D4F81845D262006AAD1B /* NXViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
