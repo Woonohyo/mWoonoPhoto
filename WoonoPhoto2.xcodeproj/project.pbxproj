@@ -21,6 +21,12 @@
 		F103D5031845D262006AAD1B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F103D4E51845D262006AAD1B /* UIKit.framework */; };
 		F103D50B1845D262006AAD1B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F103D5091845D262006AAD1B /* InfoPlist.strings */; };
 		F103D50D1845D262006AAD1B /* WoonoPhoto2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F103D50C1845D262006AAD1B /* WoonoPhoto2Tests.m */; };
+		F103D5171845D374006AAD1B /* TreeUnderTheSkyPortrait.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F103D5161845D374006AAD1B /* TreeUnderTheSkyPortrait.jpg */; };
+		F103D51B1845D8EC006AAD1B /* NXSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F103D51A1845D8EC006AAD1B /* NXSecondViewController.m */; };
+		F103D51D1845DCDB006AAD1B /* SignUpWithFacebook.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F103D51C1845DCDB006AAD1B /* SignUpWithFacebook.jpg */; };
+		F103D51F1845DD32006AAD1B /* preview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F103D51E1845DD32006AAD1B /* preview.jpg */; };
+		F103D5211845DD9B006AAD1B /* SignUpWithFacebookAlone.png in Resources */ = {isa = PBXBuildFile; fileRef = F103D5201845DD9B006AAD1B /* SignUpWithFacebookAlone.png */; };
+		F103D5251845E019006AAD1B /* KO_Signupwithfacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F103D5241845E019006AAD1B /* KO_Signupwithfacebook.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,13 @@
 		F103D5081845D262006AAD1B /* WoonoPhoto2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WoonoPhoto2Tests-Info.plist"; sourceTree = "<group>"; };
 		F103D50A1845D262006AAD1B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F103D50C1845D262006AAD1B /* WoonoPhoto2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WoonoPhoto2Tests.m; sourceTree = "<group>"; };
+		F103D5161845D374006AAD1B /* TreeUnderTheSkyPortrait.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TreeUnderTheSkyPortrait.jpg; sourceTree = "<group>"; };
+		F103D5191845D8EC006AAD1B /* NXSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXSecondViewController.h; sourceTree = "<group>"; };
+		F103D51A1845D8EC006AAD1B /* NXSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXSecondViewController.m; sourceTree = "<group>"; };
+		F103D51C1845DCDB006AAD1B /* SignUpWithFacebook.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SignUpWithFacebook.jpg; sourceTree = "<group>"; };
+		F103D51E1845DD32006AAD1B /* preview.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = preview.jpg; sourceTree = "<group>"; };
+		F103D5201845DD9B006AAD1B /* SignUpWithFacebookAlone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpWithFacebookAlone.png; sourceTree = "<group>"; };
+		F103D5241845E019006AAD1B /* KO_Signupwithfacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KO_Signupwithfacebook.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,9 +125,12 @@
 		F103D4E71845D262006AAD1B /* WoonoPhoto2 */ = {
 			isa = PBXGroup;
 			children = (
+				F103D5181845D379006AAD1B /* Photo */,
 				F103D4F01845D262006AAD1B /* NXAppDelegate.h */,
 				F103D4F11845D262006AAD1B /* NXAppDelegate.m */,
 				F103D4F31845D262006AAD1B /* Main.storyboard */,
+				F103D51A1845D8EC006AAD1B /* NXSecondViewController.m */,
+				F103D5191845D8EC006AAD1B /* NXSecondViewController.h */,
 				F103D4F61845D262006AAD1B /* NXViewController.h */,
 				F103D4F71845D262006AAD1B /* NXViewController.m */,
 				F103D4F91845D262006AAD1B /* Images.xcassets */,
@@ -150,6 +166,18 @@
 				F103D5091845D262006AAD1B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F103D5181845D379006AAD1B /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				F103D5241845E019006AAD1B /* KO_Signupwithfacebook.png */,
+				F103D5201845DD9B006AAD1B /* SignUpWithFacebookAlone.png */,
+				F103D51E1845DD32006AAD1B /* preview.jpg */,
+				F103D51C1845DCDB006AAD1B /* SignUpWithFacebook.jpg */,
+				F103D5161845D374006AAD1B /* TreeUnderTheSkyPortrait.jpg */,
+			);
+			name = Photo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +258,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F103D4FA1845D262006AAD1B /* Images.xcassets in Resources */,
+				F103D5251845E019006AAD1B /* KO_Signupwithfacebook.png in Resources */,
+				F103D5171845D374006AAD1B /* TreeUnderTheSkyPortrait.jpg in Resources */,
+				F103D51F1845DD32006AAD1B /* preview.jpg in Resources */,
 				F103D4EC1845D262006AAD1B /* InfoPlist.strings in Resources */,
+				F103D51D1845DCDB006AAD1B /* SignUpWithFacebook.jpg in Resources */,
+				F103D5211845DD9B006AAD1B /* SignUpWithFacebookAlone.png in Resources */,
 				F103D4F51845D262006AAD1B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F103D51B1845D8EC006AAD1B /* NXSecondViewController.m in Sources */,
 				F103D4F21845D262006AAD1B /* NXAppDelegate.m in Sources */,
 				F103D4EE1845D262006AAD1B /* main.m in Sources */,
 				F103D4F81845D262006AAD1B /* NXViewController.m in Sources */,
