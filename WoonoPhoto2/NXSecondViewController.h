@@ -10,4 +10,13 @@
 
 @interface NXSecondViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UITextField *userIdField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+
+- (IBAction)onLoginButton:(id)sender;
+
+- (IBAction)onJoinButton:(id)sender;
+
+
 @end

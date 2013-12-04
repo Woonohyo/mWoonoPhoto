@@ -7,12 +7,16 @@
 //
 
 #import "NXSecondViewController.h"
+#import "NXDataModel.h"
 
 @interface NXSecondViewController ()
 
+
 @end
 
-@implementation NXSecondViewController
+@implementation NXSecondViewController {
+    NXDataModel *_dataModel;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,14 +29,39 @@
 
 - (void)viewDidLoad
 {
+    // Do any additional setup after loading the view.
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    _dataModel = [[NXDataModel alloc] init];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self action:@selector(didTap:)];
+    [self.view addGestureRecognizer:tap];
+	
+}
+
+-(void)didTap:(UITapGestureRecognizer*)rec {
+    [self.userIdField resignFirstResponder];
+    [self.passwordField resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning
 {
-    [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    [super didReceiveMemoryWarning];
+}
+
+- (IBAction)onLoginButton:(id)sender {
+    [ _dataModel saveId:self.userIdField.text withPassword: self.passwordField.text ];
+    NSLog(@"%@", _dataModel);
+}
+
+- (IBAction)onJoinButton:(id)sender {
+    [ _dataModel saveId:self.userIdField.text withPassword: self.passwordField.text ];
+    NSLog(@"%@", _dataModel);
+}
+- (IBAction)onFbButton:(id)sender {
+    [ _dataModel saveId:self.userIdField.text withPassword: self.passwordField.text ];
+    NSLog(@"%@", _dataModel);
 }
 
 @end

@@ -29,6 +29,8 @@
 		F103D5251845E019006AAD1B /* KO_Signupwithfacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F103D5241845E019006AAD1B /* KO_Signupwithfacebook.png */; };
 		F158E32A184EC383002916FA /* suzi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F158E329184EC383002916FA /* suzi.jpg */; };
 		F158E32C184EC44B002916FA /* Usami.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F158E32B184EC44B002916FA /* Usami.jpg */; };
+		F158E32F184ECE6C002916FA /* NXDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F158E32E184ECE6C002916FA /* NXDataModel.m */; };
+		F158E334184F0B41002916FA /* NXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F158E333184F0B41002916FA /* NXTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +72,10 @@
 		F103D5241845E019006AAD1B /* KO_Signupwithfacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KO_Signupwithfacebook.png; sourceTree = "<group>"; };
 		F158E329184EC383002916FA /* suzi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = suzi.jpg; sourceTree = "<group>"; };
 		F158E32B184EC44B002916FA /* Usami.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Usami.jpg; sourceTree = "<group>"; };
+		F158E32D184ECE6C002916FA /* NXDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXDataModel.h; sourceTree = "<group>"; };
+		F158E32E184ECE6C002916FA /* NXDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDataModel.m; sourceTree = "<group>"; };
+		F158E332184F0B41002916FA /* NXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTableViewController.h; sourceTree = "<group>"; };
+		F158E333184F0B41002916FA /* NXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,11 +138,15 @@
 				F103D5181845D379006AAD1B /* Photo */,
 				F103D4F01845D262006AAD1B /* NXAppDelegate.h */,
 				F103D4F11845D262006AAD1B /* NXAppDelegate.m */,
+				F158E332184F0B41002916FA /* NXTableViewController.h */,
+				F158E333184F0B41002916FA /* NXTableViewController.m */,
 				F103D4F31845D262006AAD1B /* Main.storyboard */,
 				F103D51A1845D8EC006AAD1B /* NXSecondViewController.m */,
 				F103D5191845D8EC006AAD1B /* NXSecondViewController.h */,
 				F103D4F61845D262006AAD1B /* NXViewController.h */,
 				F103D4F71845D262006AAD1B /* NXViewController.m */,
+				F158E32D184ECE6C002916FA /* NXDataModel.h */,
+				F158E32E184ECE6C002916FA /* NXDataModel.m */,
 				F103D4F91845D262006AAD1B /* Images.xcassets */,
 				F103D4E81845D262006AAD1B /* Supporting Files */,
 			);
@@ -292,7 +302,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F103D51B1845D8EC006AAD1B /* NXSecondViewController.m in Sources */,
+				F158E32F184ECE6C002916FA /* NXDataModel.m in Sources */,
 				F103D4F21845D262006AAD1B /* NXAppDelegate.m in Sources */,
+				F158E334184F0B41002916FA /* NXTableViewController.m in Sources */,
 				F103D4EE1845D262006AAD1B /* main.m in Sources */,
 				F103D4F81845D262006AAD1B /* NXViewController.m in Sources */,
 			);
