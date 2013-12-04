@@ -27,6 +27,8 @@
 		F103D51F1845DD32006AAD1B /* preview.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F103D51E1845DD32006AAD1B /* preview.jpg */; };
 		F103D5211845DD9B006AAD1B /* SignUpWithFacebookAlone.png in Resources */ = {isa = PBXBuildFile; fileRef = F103D5201845DD9B006AAD1B /* SignUpWithFacebookAlone.png */; };
 		F103D5251845E019006AAD1B /* KO_Signupwithfacebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F103D5241845E019006AAD1B /* KO_Signupwithfacebook.png */; };
+		F158E32A184EC383002916FA /* suzi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F158E329184EC383002916FA /* suzi.jpg */; };
+		F158E32C184EC44B002916FA /* Usami.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F158E32B184EC44B002916FA /* Usami.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		F103D51E1845DD32006AAD1B /* preview.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = preview.jpg; sourceTree = "<group>"; };
 		F103D5201845DD9B006AAD1B /* SignUpWithFacebookAlone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpWithFacebookAlone.png; sourceTree = "<group>"; };
 		F103D5241845E019006AAD1B /* KO_Signupwithfacebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KO_Signupwithfacebook.png; sourceTree = "<group>"; };
+		F158E329184EC383002916FA /* suzi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = suzi.jpg; sourceTree = "<group>"; };
+		F158E32B184EC44B002916FA /* Usami.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Usami.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,9 +175,11 @@
 		F103D5181845D379006AAD1B /* Photo */ = {
 			isa = PBXGroup;
 			children = (
+				F158E329184EC383002916FA /* suzi.jpg */,
 				F103D5241845E019006AAD1B /* KO_Signupwithfacebook.png */,
 				F103D5201845DD9B006AAD1B /* SignUpWithFacebookAlone.png */,
 				F103D51E1845DD32006AAD1B /* preview.jpg */,
+				F158E32B184EC44B002916FA /* Usami.jpg */,
 				F103D51C1845DCDB006AAD1B /* SignUpWithFacebook.jpg */,
 				F103D5161845D374006AAD1B /* TreeUnderTheSkyPortrait.jpg */,
 			);
@@ -261,6 +267,8 @@
 				F103D5251845E019006AAD1B /* KO_Signupwithfacebook.png in Resources */,
 				F103D5171845D374006AAD1B /* TreeUnderTheSkyPortrait.jpg in Resources */,
 				F103D51F1845DD32006AAD1B /* preview.jpg in Resources */,
+				F158E32A184EC383002916FA /* suzi.jpg in Resources */,
+				F158E32C184EC44B002916FA /* Usami.jpg in Resources */,
 				F103D4EC1845D262006AAD1B /* InfoPlist.strings in Resources */,
 				F103D51D1845DCDB006AAD1B /* SignUpWithFacebook.jpg in Resources */,
 				F103D5211845DD9B006AAD1B /* SignUpWithFacebookAlone.png in Resources */,
@@ -495,6 +503,7 @@
 				F103D5121845D262006AAD1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F103D5131845D262006AAD1B /* Build configuration list for PBXNativeTarget "WoonoPhoto2Tests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +512,7 @@
 				F103D5151845D262006AAD1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
