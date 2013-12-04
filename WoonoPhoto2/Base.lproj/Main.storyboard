@@ -131,7 +131,7 @@
                                 </state>
                                 <connections>
                                     <action selector="onLoginButton:" destination="Aix-0s-YQw" eventType="touchUpInside" id="igD-uB-o21"/>
-                                    <segue destination="hht-AG-WXs" kind="push" id="orm-UR-KaU"/>
+                                    <segue destination="hht-AG-WXs" kind="push" identifier="loginCheck" id="orm-UR-KaU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OsA-Bd-mQv">

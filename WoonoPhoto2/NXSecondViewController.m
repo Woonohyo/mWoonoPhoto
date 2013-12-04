@@ -50,9 +50,15 @@
     [super didReceiveMemoryWarning];
 }
 
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    return [_dataModel authenticateId:self.userIdField.text withPassword:self.passwordField.text];
+}
+
 - (IBAction)onLoginButton:(id)sender {
     [ _dataModel saveId:self.userIdField.text withPassword: self.passwordField.text ];
     NSLog(@"%@", _dataModel);
+    
 }
 
 - (IBAction)onJoinButton:(id)sender {

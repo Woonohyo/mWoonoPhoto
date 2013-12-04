@@ -54,8 +54,13 @@
     return _itemArray[index];
 }
 
+// 일단은 ID와 PASSWORD를 같게(ID==PASSWORD) 입력했을 때에만 Segue를 진행하게끔 구현했습니다.
+// 추후 DB와 연동이 되면 이 곳만 수정하면 될 듯 합니다!
 -(BOOL)authenticateId:(NSString*)userId withPassword:(NSString*)password {
-    return true;
+    if ([userId isEqualToString:password])
+        return true;
+    else
+        return false;
 }
 
 
