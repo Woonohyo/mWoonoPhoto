@@ -23,6 +23,7 @@
     [super viewDidLoad];
     
     _myModel = [[NXDataModel alloc] init];
+    [self.navigationController setNavigationBarHidden: true];
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
@@ -34,6 +35,10 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self.navigationController setNavigationBarHidden: true];
 }
 
 @end

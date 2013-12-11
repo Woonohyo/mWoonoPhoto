@@ -18,8 +18,7 @@
     NXDataModel *_dataModel;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -27,8 +26,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     // Do any additional setup after loading the view.
     [super viewDidLoad];
     _dataModel = [[NXDataModel alloc] init];
@@ -36,6 +34,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self action:@selector(didTap:)];
     [self.view addGestureRecognizer:tap];
+    [self.navigationController setNavigationBarHidden: false];
 	
 }
 
@@ -44,27 +43,28 @@
     [self.passwordField resignFirstResponder];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     // Dispose of any resources that can be recreated.
     [super didReceiveMemoryWarning];
 }
 
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    return [_dataModel authenticateId:self.userIdField.text withPassword:self.passwordField.text];
+    return [_dataModel loginCheckViaNetwork:self.passwordField.text userId:self.userIdField.text];
+    //return [_dataModel authenticateId:self.userIdField.text withPassword:self.passwordField.text];
 }
 
 - (IBAction)onLoginButton:(id)sender {
     [ _dataModel saveId:self.userIdField.text withPassword: self.passwordField.text ];
+
     NSLog(@"%@", _dataModel);
-    
 }
 
 - (IBAction)onJoinButton:(id)sender {
     [ _dataModel saveId:self.userIdField.text withPassword: self.passwordField.text ];
     NSLog(@"%@", _dataModel);
 }
+
 - (IBAction)onFbButton:(id)sender {
     [ _dataModel saveId:self.userIdField.text withPassword: self.passwordField.text ];
     NSLog(@"%@", _dataModel);

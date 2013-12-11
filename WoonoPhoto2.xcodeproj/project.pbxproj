@@ -31,7 +31,13 @@
 		F158E32C184EC44B002916FA /* Usami.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F158E32B184EC44B002916FA /* Usami.jpg */; };
 		F158E32F184ECE6C002916FA /* NXDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F158E32E184ECE6C002916FA /* NXDataModel.m */; };
 		F158E334184F0B41002916FA /* NXTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F158E333184F0B41002916FA /* NXTableViewController.m */; };
-		F158E337184F1F38002916FA /* NXPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F158E336184F1F38002916FA /* NXPhotoViewController.m */; };
+		F1916FB7185811DA00503C55 /* NXCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1916FB6185811DA00503C55 /* NXCommentViewController.m */; };
+		F1916FBA1858324D00503C55 /* NXPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1916FB91858324D00503C55 /* NXPhotoCell.m */; };
+		F1916FCA1858390200503C55 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F1916FBD1858390200503C55 /* SDImageCache.m */; };
+		F1916FCB1858390200503C55 /* SDWebImageDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F1916FC11858390200503C55 /* SDWebImageDecoder.m */; };
+		F1916FCC1858390200503C55 /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = F1916FC31858390200503C55 /* SDWebImageDownloader.m */; };
+		F1916FCD1858390200503C55 /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F1916FC61858390200503C55 /* SDWebImageManager.m */; };
+		F1916FCE1858390200503C55 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F1916FC91858390200503C55 /* UIImageView+WebCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +83,24 @@
 		F158E32E184ECE6C002916FA /* NXDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDataModel.m; sourceTree = "<group>"; };
 		F158E332184F0B41002916FA /* NXTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXTableViewController.h; sourceTree = "<group>"; };
 		F158E333184F0B41002916FA /* NXTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXTableViewController.m; sourceTree = "<group>"; };
-		F158E335184F1F38002916FA /* NXPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXPhotoViewController.h; sourceTree = "<group>"; };
-		F158E336184F1F38002916FA /* NXPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXPhotoViewController.m; sourceTree = "<group>"; };
+		F1916FB5185811DA00503C55 /* NXCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXCommentViewController.h; sourceTree = "<group>"; };
+		F1916FB6185811DA00503C55 /* NXCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXCommentViewController.m; sourceTree = "<group>"; };
+		F1916FB81858324D00503C55 /* NXPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXPhotoCell.h; sourceTree = "<group>"; };
+		F1916FB91858324D00503C55 /* NXPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXPhotoCell.m; sourceTree = "<group>"; };
+		F1916FBC1858390200503C55 /* SDImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCache.h; sourceTree = "<group>"; };
+		F1916FBD1858390200503C55 /* SDImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDImageCache.m; sourceTree = "<group>"; };
+		F1916FBE1858390200503C55 /* SDImageCacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDImageCacheDelegate.h; sourceTree = "<group>"; };
+		F1916FBF1858390200503C55 /* SDWebImageCompat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageCompat.h; sourceTree = "<group>"; };
+		F1916FC01858390200503C55 /* SDWebImageDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDecoder.h; sourceTree = "<group>"; };
+		F1916FC11858390200503C55 /* SDWebImageDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDecoder.m; sourceTree = "<group>"; };
+		F1916FC21858390200503C55 /* SDWebImageDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloader.h; sourceTree = "<group>"; };
+		F1916FC31858390200503C55 /* SDWebImageDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDownloader.m; sourceTree = "<group>"; };
+		F1916FC41858390200503C55 /* SDWebImageDownloaderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageDownloaderDelegate.h; sourceTree = "<group>"; };
+		F1916FC51858390200503C55 /* SDWebImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManager.h; sourceTree = "<group>"; };
+		F1916FC61858390200503C55 /* SDWebImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageManager.m; sourceTree = "<group>"; };
+		F1916FC71858390200503C55 /* SDWebImageManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageManagerDelegate.h; sourceTree = "<group>"; };
+		F1916FC81858390200503C55 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
+		F1916FC91858390200503C55 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,18 +160,21 @@
 		F103D4E71845D262006AAD1B /* WoonoPhoto2 */ = {
 			isa = PBXGroup;
 			children = (
+				F1916FBB185838EC00503C55 /* SDWebCache */,
 				F103D5181845D379006AAD1B /* Photo */,
-				F103D4F01845D262006AAD1B /* NXAppDelegate.h */,
-				F103D4F11845D262006AAD1B /* NXAppDelegate.m */,
-				F158E332184F0B41002916FA /* NXTableViewController.h */,
-				F158E333184F0B41002916FA /* NXTableViewController.m */,
-				F158E335184F1F38002916FA /* NXPhotoViewController.h */,
-				F158E336184F1F38002916FA /* NXPhotoViewController.m */,
-				F103D4F31845D262006AAD1B /* Main.storyboard */,
-				F103D51A1845D8EC006AAD1B /* NXSecondViewController.m */,
-				F103D5191845D8EC006AAD1B /* NXSecondViewController.h */,
 				F103D4F61845D262006AAD1B /* NXViewController.h */,
 				F103D4F71845D262006AAD1B /* NXViewController.m */,
+				F103D51A1845D8EC006AAD1B /* NXSecondViewController.m */,
+				F103D5191845D8EC006AAD1B /* NXSecondViewController.h */,
+				F158E332184F0B41002916FA /* NXTableViewController.h */,
+				F158E333184F0B41002916FA /* NXTableViewController.m */,
+				F1916FB81858324D00503C55 /* NXPhotoCell.h */,
+				F1916FB91858324D00503C55 /* NXPhotoCell.m */,
+				F1916FB5185811DA00503C55 /* NXCommentViewController.h */,
+				F1916FB6185811DA00503C55 /* NXCommentViewController.m */,
+				F103D4F01845D262006AAD1B /* NXAppDelegate.h */,
+				F103D4F11845D262006AAD1B /* NXAppDelegate.m */,
+				F103D4F31845D262006AAD1B /* Main.storyboard */,
 				F158E32D184ECE6C002916FA /* NXDataModel.h */,
 				F158E32E184ECE6C002916FA /* NXDataModel.m */,
 				F103D4F91845D262006AAD1B /* Images.xcassets */,
@@ -199,6 +224,27 @@
 				F103D5161845D374006AAD1B /* TreeUnderTheSkyPortrait.jpg */,
 			);
 			name = Photo;
+			sourceTree = "<group>";
+		};
+		F1916FBB185838EC00503C55 /* SDWebCache */ = {
+			isa = PBXGroup;
+			children = (
+				F1916FBC1858390200503C55 /* SDImageCache.h */,
+				F1916FBD1858390200503C55 /* SDImageCache.m */,
+				F1916FBE1858390200503C55 /* SDImageCacheDelegate.h */,
+				F1916FBF1858390200503C55 /* SDWebImageCompat.h */,
+				F1916FC01858390200503C55 /* SDWebImageDecoder.h */,
+				F1916FC11858390200503C55 /* SDWebImageDecoder.m */,
+				F1916FC21858390200503C55 /* SDWebImageDownloader.h */,
+				F1916FC31858390200503C55 /* SDWebImageDownloader.m */,
+				F1916FC41858390200503C55 /* SDWebImageDownloaderDelegate.h */,
+				F1916FC51858390200503C55 /* SDWebImageManager.h */,
+				F1916FC61858390200503C55 /* SDWebImageManager.m */,
+				F1916FC71858390200503C55 /* SDWebImageManagerDelegate.h */,
+				F1916FC81858390200503C55 /* UIImageView+WebCache.h */,
+				F1916FC91858390200503C55 /* UIImageView+WebCache.m */,
+			);
+			name = SDWebCache;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,12 +352,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1916FBA1858324D00503C55 /* NXPhotoCell.m in Sources */,
+				F1916FCE1858390200503C55 /* UIImageView+WebCache.m in Sources */,
+				F1916FCA1858390200503C55 /* SDImageCache.m in Sources */,
+				F1916FCB1858390200503C55 /* SDWebImageDecoder.m in Sources */,
+				F1916FCC1858390200503C55 /* SDWebImageDownloader.m in Sources */,
+				F1916FB7185811DA00503C55 /* NXCommentViewController.m in Sources */,
 				F103D51B1845D8EC006AAD1B /* NXSecondViewController.m in Sources */,
 				F158E32F184ECE6C002916FA /* NXDataModel.m in Sources */,
 				F103D4F21845D262006AAD1B /* NXAppDelegate.m in Sources */,
 				F158E334184F0B41002916FA /* NXTableViewController.m in Sources */,
+				F1916FCD1858390200503C55 /* SDWebImageManager.m in Sources */,
 				F103D4EE1845D262006AAD1B /* main.m in Sources */,
-				F158E337184F1F38002916FA /* NXPhotoViewController.m in Sources */,
 				F103D4F81845D262006AAD1B /* NXViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

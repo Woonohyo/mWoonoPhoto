@@ -8,10 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NXDataModel : NSObject
+@interface NXDataModel : NSObject <NSURLConnectionDataDelegate>
+
+@property UITableViewController* tableController;
 
 -(void)saveId:(NSString*)userId withPassword:(NSString*)password;
 -(BOOL)authenticateId:(NSString*)userId withPassword:(NSString*)password;
 -(NSDictionary*)objectAtIndex:(NSUInteger)index;
+-(NSArray*)arrayObjectAtIndex:(NSUInteger)index;
+-(BOOL)loginCheckViaNetwork:(NSString *)password userId:(NSString *)userId;
+-(NSInteger)getListSize;
 
 @end

@@ -160,34 +160,67 @@
             </objects>
             <point key="canvasLocation" x="226" y="371"/>
         </scene>
-        <!--Table View Controller - Photo Stream-->
+        <!--Table View Controller - Photos-->
         <scene sceneID="p86-Ou-qjJ">
             <objects>
                 <tableViewController id="hht-AG-WXs" customClass="NXTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="vfS-bg-v5a">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="223" sectionHeaderHeight="10" sectionFooterHeight="10" id="vfS-bg-v5a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PhotoCell" rowHeight="223" id="nvX-3o-9I4" customClass="NXPhotoCell">
+                                <rect key="frame" x="0.0" y="119" width="320" height="223"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nvX-3o-9I4" id="HnD-Z2-w6x">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="222"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anJ-3S-qAe">
+                                            <rect key="frame" x="40" y="18" width="240" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="10N-hc-9cT">
+                                            <rect key="frame" x="40" y="47" width="240" height="128"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyo-Cs-5Bt">
+                                            <rect key="frame" x="40" y="183" width="240" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cellComment" destination="Oyo-Cs-5Bt" id="zlW-XT-Mhc"/>
+                                    <outlet property="cellPhoto" destination="10N-hc-9cT" id="0cF-Y0-efE"/>
+                                    <outlet property="cellTitle" destination="anJ-3S-qAe" id="Ath-cf-F6z"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <sections/>
                         <connections>
                             <outlet property="dataSource" destination="hht-AG-WXs" id="Cgj-5A-hYC"/>
                             <outlet property="delegate" destination="hht-AG-WXs" id="Fnj-eF-JeI"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Photo Stream" id="Nf6-td-DcQ"/>
+                    <navigationItem key="navigationItem" title="Photos" id="Nf6-td-DcQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="G81-9r-cMb" kind="push" identifier="Comments" id="fJh-vw-RpS"/>
+                        <segue destination="G81-9r-cMb" kind="push" id="boV-p5-ZwR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcG-MB-hYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="609" y="371"/>
         </scene>
-        <!--Table View Controller - Comments-->
+        <!--Comment View Controller - Comments-->
         <scene sceneID="lgR-s5-WOY">
             <objects>
-                <tableViewController id="G81-9r-cMb" sceneMemberID="viewController">
+                <tableViewController id="G81-9r-cMb" customClass="NXCommentViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Vi4-do-TcH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,7 +235,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0g-zr-Gx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="973" y="374"/>
+            <point key="canvasLocation" x="1023" y="371"/>
         </scene>
     </scenes>
     <resources>
