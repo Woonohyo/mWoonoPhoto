@@ -237,6 +237,54 @@
             </objects>
             <point key="canvasLocation" x="1023" y="371"/>
         </scene>
+        <!--Write View Controller-->
+        <scene sceneID="jom-uh-l4F">
+            <objects>
+                <viewController storyboardIdentifier="writeViewController" id="aMK-Uo-5gP" customClass="NXWriteViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pgj-Df-LQI"/>
+                        <viewControllerLayoutGuide type="bottom" id="WRG-3h-t4I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wHy-B6-Ggc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvQ-ib-WTB">
+                                <rect key="frame" x="25" y="45" width="270" height="270"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-IL-os3">
+                                <rect key="frame" x="125" y="477" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="기억 남기기">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onUploadClick:" destination="aMK-Uo-5gP" eventType="touchUpInside" id="ppj-yq-iUC"/>
+                                    <action selector="uploader:" destination="aMK-Uo-5gP" eventType="touchUpInside" id="cC6-zQ-kby"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMK-bW-GhR">
+                                <rect key="frame" x="40" y="345" width="240" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="writeImageView" destination="cvQ-ib-WTB" id="naL-ls-GNy"/>
+                        <outlet property="writeTextView" destination="lMK-bW-GhR" id="DmT-YO-FbN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u2s-fv-7WJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1023" y="-224"/>
+        </scene>
     </scenes>
     <resources>
         <image name="KO_Signupwithfacebook.png" width="393" height="66"/>

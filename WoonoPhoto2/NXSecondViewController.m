@@ -35,7 +35,47 @@
                                    initWithTarget:self action:@selector(didTap:)];
     [self.view addGestureRecognizer:tap];
     [self.navigationController setNavigationBarHidden: false];
-	
+    
+    _userIdField.delegate = self;
+    _passwordField.delegate = self;
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == _userIdField) {
+        [_userIdField resignFirstResponder];
+        [_passwordField becomeFirstResponder];
+    }
+    else if (textField == _passwordField) {
+        [_passwordField resignFirstResponder];
+        [self onLoginButton:self];
+    }
+    return NO;
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    if (textField == _userIdField) {
+        [UIView beginAnimations:@"IdFieldUpAnimation" context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationDuration:UIViewAnimationCurveEaseIn];
+        CGRect newframe = self.view.frame;
+        newframe.origin.y = -40;
+        self.view.frame = newframe;
+        [UIView commitAnimations];
+    }
+    return YES;
+}
+
+-(BOOL)textFieldShouldEndEditing:(UITextField *)textField {
+    if (textField == _userIdField) {
+        [UIView beginAnimations:@"IdFieldDownAnimation" context:nil];
+        [UIView setAnimationDuration:0.5];
+        [UIView setAnimationDuration:UIViewAnimationCurveEaseIn];
+        CGRect newframe = self.view.frame;
+        newframe.origin.y = 0;
+        self.view.frame = newframe;
+        [UIView commitAnimations];
+    }
+    return YES;
 }
 
 -(void)didTap:(UITapGestureRecognizer*)rec {

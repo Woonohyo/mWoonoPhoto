@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NXSecondViewController : UIViewController
+@interface NXSecondViewController : UIViewController <UITextFieldDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextField *userIdField;

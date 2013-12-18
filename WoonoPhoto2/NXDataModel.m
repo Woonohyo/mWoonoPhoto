@@ -23,18 +23,6 @@
 - (id)init {
     self = [super init];
     if (self) {
-        /*_itemArray = [@[
-                        @{ @"title": @"첫번째", @"content": @"Suzi", @"image":@"suzi.jpg"},
-                        @{ @"title": @"두번째", @"content": @"Usami", @"image":@"Usami.jpg"},
-                        @{ @"title": @"세번째", @"content": @"Suzi", @"image":@"suzi.jpg"}
-                        ] mutableCopy]; // mutableArray에는 mutableCopy를 넣어준다.
-         */
-        
-        //_itemDictionary = @{@"name": @"Woonohyo", @"age": @16, @"male": @YES, @"array": _itemArray};
-        // 이렇게 생성해도 좋다.
-        // NSMutableArray * _newArray = [@[@"apple"] mutableCopy];
-        // 하지만 생성자를 다 쓰는 방식이 일반적
-        
         _loginData = [[NSMutableDictionary alloc] initWithCapacity:2];
         _existData = [[NSMutableDictionary alloc] initWithCapacity:2];
         _responseData = [[NSMutableData alloc] initWithCapacity:10];
@@ -82,6 +70,8 @@
     NSString * aURLString = @"http://1.234.2.8/login.php";
     //NSString * aURLString = @"http://localhost:8080/logincheck";
     NSString * aFormData = [NSString stringWithFormat:@"id=%@&passwd=%@", userId, password];
+    //NSString * aFormData = [NSString stringWithFormat:@"username=%@&password=%@", userId, password];
+    
     NSURL * aURL = [NSURL URLWithString:aURLString];
     NSMutableURLRequest * aRequest = [NSMutableURLRequest requestWithURL:aURL];
     

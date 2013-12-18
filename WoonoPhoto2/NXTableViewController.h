@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CLImageEditor.h"
 
-@interface NXTableViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate>
+@interface NXTableViewController : UITableViewController <UITableViewDataSource,UITableViewDelegate, CLImageEditorDelegate>
 
 
 @end

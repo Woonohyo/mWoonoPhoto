@@ -10,6 +10,9 @@
 #import "NXDataModel.h"
 #import "NXPhotoCell.h"
 #import "UIImageView+WebCache.h"
+#import "NXWriteViewController.h"
+
+#import <MobileCoreServices/MobileCoreServices.h>
 
 @interface NXTableViewController ()
 
@@ -28,13 +31,47 @@
     return self;
 }
 
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    NSString * mediaType = [info objectForKey:UIImagePickerControllerMediaType];
+    if ([mediaType isEqualToString:(__bridge id)kUTTypeImage])
+    {
+        UIImage* aImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+        CLImageEditor *editor = [[CLImageEditor alloc] initWithImage:aImage];
+        editor.delegate = self;
+        [picker pushViewController:editor animated:YES];
+        
+        UIAlertView *alertView1 = [[UIAlertView alloc] initWithTitle:@"사진" message:@"1장의 사진이 선택되었습니다." delegate:self cancelButtonTitle:@"취소" otherButtonTitles:@"확인", nil];
+        alertView1.alertViewStyle = UIAlertViewStyleDefault;
+        [alertView1 show];
+    }
+}
+
+-(void)imageEditor:(CLImageEditor *)editor didFinishEdittingWithImage:(UIImage *)image
+{
+    NXWriteViewController * writer = [self.storyboard instantiateViewControllerWithIdentifier:@"writeViewController"];
+    [writer prepareData:image];
+    [editor dismissViewControllerAnimated:NO completion:nil];
+    [self.navigationController pushViewController:writer animated:NO];
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _dataModel = [[NXDataModel alloc] init];
     _dataModel.tableController = self;
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemCamera target:self action:@selector(newImage:)];
+    self.navigationItem.rightBarButtonItem = rightButton;
 	// Do any additional setup after loading the view.
 }
+
+-(void)newImage:(id)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    [self.navigationController presentViewController:picker animated:YES completion:^{}];
+}
+                                                                                                                              
+                                                                                                                              
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
