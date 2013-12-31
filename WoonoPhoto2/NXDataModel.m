@@ -111,7 +111,7 @@
     NSLog(@"Current Time: %@", curDateTime);
     NSString * fileName = curDateTime;
     
-    NSString * stringUrl = @"http://localhost:8080/"
+    NSString * stringUrl = @"http://localhost:8080/";
 }
 
 @end
