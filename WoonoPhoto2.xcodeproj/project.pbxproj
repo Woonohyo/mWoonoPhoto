@@ -62,6 +62,7 @@
 		F10AAE5718618CEC002051DA /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F10AAE3418618CEC002051DA /* UIView+Frame.m */; };
 		F10AAE5818618CEC002051DA /* _CLImageEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F10AAE3718618CEC002051DA /* _CLImageEditorViewController.m */; };
 		F10AAE5918618CEC002051DA /* _CLImageEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F10AAE3818618CEC002051DA /* _CLImageEditorViewController.xib */; };
+		F1470BC51872EB0D0010359D /* NXCommentPhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F1470BC41872EB0D0010359D /* NXCommentPhotoCell.m */; };
 		F158E32A184EC383002916FA /* suzi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F158E329184EC383002916FA /* suzi.jpg */; };
 		F158E32C184EC44B002916FA /* Usami.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F158E32B184EC44B002916FA /* Usami.jpg */; };
 		F158E32F184ECE6C002916FA /* NXDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F158E32E184ECE6C002916FA /* NXDataModel.m */; };
@@ -181,6 +182,8 @@
 		F10AAE3618618CEC002051DA /* _CLImageEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _CLImageEditorViewController.h; sourceTree = "<group>"; };
 		F10AAE3718618CEC002051DA /* _CLImageEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _CLImageEditorViewController.m; sourceTree = "<group>"; };
 		F10AAE3818618CEC002051DA /* _CLImageEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = _CLImageEditorViewController.xib; sourceTree = "<group>"; };
+		F1470BC31872EB0D0010359D /* NXCommentPhotoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXCommentPhotoCell.h; sourceTree = "<group>"; };
+		F1470BC41872EB0D0010359D /* NXCommentPhotoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXCommentPhotoCell.m; sourceTree = "<group>"; };
 		F158E329184EC383002916FA /* suzi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = suzi.jpg; sourceTree = "<group>"; };
 		F158E32B184EC44B002916FA /* Usami.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Usami.jpg; sourceTree = "<group>"; };
 		F158E32D184ECE6C002916FA /* NXDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXDataModel.h; sourceTree = "<group>"; };
@@ -277,6 +280,8 @@
 				F158E333184F0B41002916FA /* NXTableViewController.m */,
 				F10AADE718618646002051DA /* NXWriteViewController.h */,
 				F10AADE818618646002051DA /* NXWriteViewController.m */,
+				F1470BC31872EB0D0010359D /* NXCommentPhotoCell.h */,
+				F1470BC41872EB0D0010359D /* NXCommentPhotoCell.m */,
 				F1916FB81858324D00503C55 /* NXPhotoCell.h */,
 				F1916FB91858324D00503C55 /* NXPhotoCell.m */,
 				F1916FB5185811DA00503C55 /* NXCommentViewController.h */,
@@ -640,6 +645,7 @@
 				F10AAE4818618CEC002051DA /* CLEffectTool.m in Sources */,
 				F10AAE4F18618CEC002051DA /* CLImageEditorTheme+Private.m in Sources */,
 				F1916FCA1858390200503C55 /* SDImageCache.m in Sources */,
+				F1470BC51872EB0D0010359D /* NXCommentPhotoCell.m in Sources */,
 				F1916FCB1858390200503C55 /* SDWebImageDecoder.m in Sources */,
 				F10AAE5018618CEC002051DA /* CLImageToolInfo+Private.m in Sources */,
 				F10AADE918618646002051DA /* NXWriteViewController.m in Sources */,

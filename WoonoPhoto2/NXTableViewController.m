@@ -11,7 +11,7 @@
 #import "NXPhotoCell.h"
 #import "UIImageView+WebCache.h"
 #import "NXWriteViewController.h"
-
+#import "NXCommentViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 
 @interface NXTableViewController ()
@@ -88,23 +88,28 @@
     NXPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PhotoCell"];
     
     cell.cellTitle.text = [item objectForKey:@"title"];
+    cell.cellComment.text = [item objectForKey:@"contents"];
     
     //URL을 통한 그림 삽입
-    [cell.cellPhoto setImageWithURL: [NSURL URLWithString: [item objectForKey:@"image"]]];
-    
-    // 로컬에 있는 그림 파일 삽입
-    // cell.cellPhoto.image = [UIImage imageNamed: [item objectForKey:@"image"]];
-    
-    cell.cellComment.text = [item objectForKey:@"content"];
-    
-    /*
-     UITableViewCell* cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
-    cell.textLabel.text = [item objectForKey:@"title"];
-    cell.detailTextLabel.text = [item objectForKey:@"content"];
-    cell.imageView.image = [UIImage imageNamed: [item objectForKey: @"image"]];
-     */
+    if(![[item objectForKey:@"fileName"]  isEqual: @""])
+    {
+        NSString * url = @"http://localhost:8080/images/";
+        url = [url stringByAppendingString:[item objectForKey:@"fileName"]];
+        NSLog(@"FILE NAME: %@", url);
+        [cell.cellPhoto setImageWithURL:[NSURL URLWithString:url]];
+    } else {
+        NSString * url = @"http://localhost:8080/images/noImageUploaded.png";
+        NSLog(@"FILE NAME: %@", url);
+        [cell.cellPhoto setImageWithURL:[NSURL URLWithString:url]];
+    }
     
     return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NXCommentViewController *destination = segue.destinationViewController;
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    destination.selectedData = [_dataModel objectAtIndex:indexPath.row];
 }
 
 // Manual Segue

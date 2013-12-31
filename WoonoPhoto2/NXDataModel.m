@@ -26,7 +26,7 @@
         _loginData = [[NSMutableDictionary alloc] initWithCapacity:2];
         _existData = [[NSMutableDictionary alloc] initWithCapacity:2];
         _responseData = [[NSMutableData alloc] initWithCapacity:10];
-        NSString *aURLString = @"http://1.234.2.8/board.php";
+        NSString *aURLString = @"http://localhost:8080/post/list.json";
         NSURL *aURL = [NSURL URLWithString:aURLString];
         NSURLRequest *aRequest = [NSMutableURLRequest requestWithURL:aURL];
         NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:aRequest delegate:self startImmediately:YES];
@@ -41,14 +41,14 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    _itemArray = [NSJSONSerialization JSONObjectWithData:_responseData options:NSJSONReadingMutableContainers error:nil];
+    _itemDictionary = [NSJSONSerialization JSONObjectWithData:_responseData options:NSJSONReadingMutableContainers error:nil];
     [_tableController.tableView reloadData];
-    //NSLog(@"result json = %@", _itemArray);
+    NSLog(@"result json = %@", _itemDictionary);
 }
 
 - (NSString*)description {
-    return _loginData.description;
-    //return _itemArray.description;
+    //return _loginData.description;
+    return _itemDictionary.description;
 }
 
 -(void)saveId:(NSString*)userId withPassword:(NSString*)password {
@@ -57,20 +57,22 @@
 }
 
 -(NSDictionary*)objectAtIndex:(NSUInteger)index {
-    return _itemArray[index];
+    return _itemDictionary[@"posts"][index];
 }
 
 -(NSInteger)getListSize {
-    return [_itemArray count];
+    NSArray* arr = [_itemDictionary objectForKey:@"posts"];
+    NSLog(@"Posts count: %d", arr.count);
+    return arr.count;
 }
 
 
 // 서버와 연동을 통해서 로그인 여부를 확인하는 메소드
 - (BOOL)loginCheckViaNetwork:(NSString *)password userId:(NSString *)userId {
-    NSString * aURLString = @"http://1.234.2.8/login.php";
-    //NSString * aURLString = @"http://localhost:8080/logincheck";
-    NSString * aFormData = [NSString stringWithFormat:@"id=%@&passwd=%@", userId, password];
-    //NSString * aFormData = [NSString stringWithFormat:@"username=%@&password=%@", userId, password];
+    //NSString * aURLString = @"http://1.234.2.8/login.php";
+    NSString * aURLString = @"http://localhost:8080/logincheck.json";
+    //NSString * aFormData = [NSString stringWithFormat:@"id=%@&passwd=%@", userId, password];
+    NSString * aFormData = [NSString stringWithFormat:@"username=%@&password=%@", userId, password];
     
     NSURL * aURL = [NSURL URLWithString:aURLString];
     NSMutableURLRequest * aRequest = [NSMutableURLRequest requestWithURL:aURL];

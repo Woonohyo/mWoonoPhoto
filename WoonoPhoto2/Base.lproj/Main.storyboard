@@ -210,7 +210,7 @@
                     <navigationItem key="navigationItem" title="Photos" id="Nf6-td-DcQ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="G81-9r-cMb" kind="push" id="boV-p5-ZwR"/>
+                        <segue destination="G81-9r-cMb" kind="push" identifier="BoardToCommentSegue" id="boV-p5-ZwR"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcG-MB-hYQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -221,10 +221,43 @@
         <scene sceneID="lgR-s5-WOY">
             <objects>
                 <tableViewController id="G81-9r-cMb" customClass="NXCommentViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Vi4-do-TcH">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="439" sectionHeaderHeight="22" sectionFooterHeight="22" id="Vi4-do-TcH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="s4b-x2-lq6">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="498" id="oJI-lK-aZx" customClass="NXCommentPhotoCell">
+                                        <rect key="frame" x="0.0" y="64" width="320" height="498"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oJI-lK-aZx" id="u4L-H9-WND">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="497"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtB-IP-xY8">
+                                                    <rect key="frame" x="101" y="20" width="119" height="28"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xG0-ok-FUh">
+                                                    <rect key="frame" x="20" y="56" width="280" height="280"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGg-6d-c9E">
+                                                    <rect key="frame" x="40" y="344" width="240" height="81"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
                         <connections>
                             <outlet property="dataSource" destination="G81-9r-cMb" id="S7I-zy-HIf"/>
                             <outlet property="delegate" destination="G81-9r-cMb" id="Xuv-Py-GsG"/>
@@ -232,6 +265,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Comments" id="XTZ-Gm-GQl"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cmtComment" destination="GGg-6d-c9E" id="Wn2-IN-qZb"/>
+                        <outlet property="cmtPhoto" destination="xG0-ok-FUh" id="72w-DT-K6V"/>
+                        <outlet property="cmtTitle" destination="QtB-IP-xY8" id="sbv-C2-eo1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0g-zr-Gx7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,11 +288,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cvQ-ib-WTB">
-                                <rect key="frame" x="25" y="45" width="270" height="270"/>
+                                <rect key="frame" x="25" y="129" width="270" height="270"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUF-IL-os3">
-                                <rect key="frame" x="125" y="477" width="70" height="30"/>
+                                <rect key="frame" x="125" y="518" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="기억 남기기">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -264,14 +302,19 @@
                                     <action selector="uploader:" destination="aMK-Uo-5gP" eventType="touchUpInside" id="cC6-zQ-kby"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lMK-bW-GhR">
-                                <rect key="frame" x="40" y="345" width="240" height="98"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="writeTextView" translatesAutoresizingMaskIntoConstraints="NO" id="lMK-bW-GhR">
+                                <rect key="frame" x="40" y="422" width="240" height="98"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="어떤 추억인가요?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6DW-lf-I1R">
+                                <rect key="frame" x="40" y="74" width="240" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -279,6 +322,7 @@
                     <connections>
                         <outlet property="writeImageView" destination="cvQ-ib-WTB" id="naL-ls-GNy"/>
                         <outlet property="writeTextView" destination="lMK-bW-GhR" id="DmT-YO-FbN"/>
+                        <outlet property="writeTitleView" destination="6DW-lf-I1R" id="p3g-J0-AMf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2s-fv-7WJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

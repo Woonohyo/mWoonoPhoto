@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NXWriteViewController : UIViewController
+@interface NXWriteViewController : UIViewController <UITextViewDelegate, UITextFieldDelegate>
 {
     UIImage * _internalImage;
 }
 
+@property (weak, nonatomic) IBOutlet UITextField *writeTitleView;
 @property (weak, nonatomic) IBOutlet UIImageView *writeImageView;
 @property (weak, nonatomic) IBOutlet UITextView *writeTextView;
 - (void)prepareData:(UIImage*)image;

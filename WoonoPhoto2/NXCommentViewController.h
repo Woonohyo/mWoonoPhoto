@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface NXCommentViewController : UITableViewController
-
+@property (weak, nonatomic) IBOutlet UILabel *cmtTitle;
+@property (weak, nonatomic) IBOutlet UILabel *cmtComment;
+@property (weak, nonatomic) IBOutlet UIImageView *cmtPhoto;
+@property NSDictionary * selectedData;
 @end

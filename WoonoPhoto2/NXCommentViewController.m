@@ -8,6 +8,7 @@
 
 #import "NXCommentViewController.h"
 #import "NXDataModel.h"
+#import "UIImageView+WebCache.h"
 
 @interface NXCommentViewController ()
 
@@ -30,6 +31,20 @@
 {
     [super viewDidLoad];
     _dataModel = [[NXDataModel alloc] init];
+    self.cmtTitle.text = self.selectedData[@"title"];
+    self.cmtComment.text = self.selectedData[@"contents"];
+    NSString * url;
+    
+    //URL을 통한 그림 삽입
+    if(![[self.selectedData objectForKey:@"fileName"]  isEqual: @""])
+    {
+        url = @"http://localhost:8080/images/";
+        url = [url stringByAppendingString:[self.selectedData objectForKey:@"fileName"]];
+    } else {
+        url = @"http://localhost:8080/images/noImageUploaded.png";
+    }
+    [self.cmtPhoto setImageWithURL:[NSURL URLWithString:url]];
+
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -44,23 +59,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    // Configure the cell...
-    return cell;
-}
 
 /*
 // Override to support conditional editing of the table view.

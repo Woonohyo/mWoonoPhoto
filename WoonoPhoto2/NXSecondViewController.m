@@ -11,7 +11,6 @@
 
 @interface NXSecondViewController ()
 
-
 @end
 
 @implementation NXSecondViewController {
@@ -55,8 +54,8 @@
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     if (textField == _userIdField) {
         [UIView beginAnimations:@"IdFieldUpAnimation" context:nil];
-        [UIView setAnimationDuration:0.5];
-        [UIView setAnimationDuration:UIViewAnimationCurveEaseIn];
+        [UIView setAnimationDuration:0.3];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
         CGRect newframe = self.view.frame;
         newframe.origin.y = -40;
         self.view.frame = newframe;
@@ -68,8 +67,8 @@
 -(BOOL)textFieldShouldEndEditing:(UITextField *)textField {
     if (textField == _userIdField) {
         [UIView beginAnimations:@"IdFieldDownAnimation" context:nil];
-        [UIView setAnimationDuration:0.5];
-        [UIView setAnimationDuration:UIViewAnimationCurveEaseIn];
+        [UIView setAnimationDuration:0.3];
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
         CGRect newframe = self.view.frame;
         newframe.origin.y = 0;
         self.view.frame = newframe;
