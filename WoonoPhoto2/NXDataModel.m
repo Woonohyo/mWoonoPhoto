@@ -104,4 +104,14 @@
         return false;
 }
 
+-(void)sendImage:(UIImage *)image Title:(NSString *)title withContents:(NSString *)contents {
+    NSDateFormatter * time = [[NSDateFormatter alloc]init];
+    [time setDateFormat:@"yyMMddHHmmss"];
+    NSString * curDateTime = [time stringFromDate:[NSDate date]];
+    NSLog(@"Current Time: %@", curDateTime);
+    NSString * fileName = curDateTime;
+    
+    NSString * stringUrl = @"http://localhost:8080/"
+}
+
 @end

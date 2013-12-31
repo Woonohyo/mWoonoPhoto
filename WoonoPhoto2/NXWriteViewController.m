@@ -14,6 +14,9 @@
 @end
 
 @implementation NXWriteViewController
+{
+    NXDataModel * _sendModel;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,11 +31,12 @@
 {
     [super viewDidLoad];
     _writeImageView.image = _internalImage;
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self action:@selector(didTap:)];
     [self.view addGestureRecognizer:tap];
-	// Do any additional setup after loading the view.
     _writeTextView.delegate = self;
+    _sendModel = [[NXDataModel alloc] init];
 }
 
 -(void)didTap:(UITapGestureRecognizer*)rec {
@@ -57,6 +61,7 @@
 
 - (IBAction)onUploadClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"image: %@, title: %@, contents: %@", _writeImageView.image, self.writeTitleView.text, self.writeTextView.text);
 }
 
 -(BOOL)textViewShouldBeginEditing:(UITextView *)textView {
