@@ -118,4 +118,14 @@
     [self performSegueWithIdentifier:@"BoardToCommentSegue" sender:indexPath];
 }
 
+-(IBAction)returnList:(UIStoryboardSegue*)segue{
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    _dataModel = [[NXDataModel alloc]init];
+    _dataModel.tableController = self;
+}
+
 @end

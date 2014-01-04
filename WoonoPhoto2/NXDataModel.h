@@ -18,5 +18,5 @@
 -(NSArray*)arrayObjectAtIndex:(NSUInteger)index;
 -(BOOL)loginCheckViaNetwork:(NSString *)password userId:(NSString *)userId;
 -(NSInteger)getListSize;
-
+-(void)sendNewPost:(UIImage *)image Title:(NSString *)title withContents:(NSString *)contents;
 @end

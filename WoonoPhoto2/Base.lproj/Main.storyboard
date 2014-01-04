@@ -300,6 +300,7 @@
                                 <connections>
                                     <action selector="onUploadClick:" destination="aMK-Uo-5gP" eventType="touchUpInside" id="ppj-yq-iUC"/>
                                     <action selector="uploader:" destination="aMK-Uo-5gP" eventType="touchUpInside" id="cC6-zQ-kby"/>
+                                    <segue destination="A2s-E8-lub" kind="unwind" unwindAction="returnList:" id="O28-XS-IQ4"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="writeTextView" translatesAutoresizingMaskIntoConstraints="NO" id="lMK-bW-GhR">
@@ -326,6 +327,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u2s-fv-7WJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="A2s-E8-lub" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1023" y="-224"/>
         </scene>

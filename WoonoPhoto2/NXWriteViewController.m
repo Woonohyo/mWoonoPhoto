@@ -62,6 +62,7 @@
 - (IBAction)onUploadClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
     NSLog(@"image: %@, title: %@, contents: %@", _writeImageView.image, self.writeTitleView.text, self.writeTextView.text);
+    [_sendModel sendNewPost:self.writeImageView.image Title:self.writeTitleView.text withContents:self.writeTextView.text];
 }
 
 -(BOOL)textViewShouldBeginEditing:(UITextView *)textView {

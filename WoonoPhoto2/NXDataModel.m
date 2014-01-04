@@ -7,6 +7,7 @@
 //
 
 #import "NXDataModel.h"
+#import <ImageIO/CGImageSource.h>
 #define kPASSWORD_KEY @"password"
 #define kID_KEY @"userId"
 
@@ -103,15 +104,108 @@
     else
         return false;
 }
+/*
 
--(void)sendImage:(UIImage *)image Title:(NSString *)title withContents:(NSString *)contents {
+-(void)sendPost:(UIImage *)image Title:(NSString *)title withContents:(NSString *)contents {
+    NSLog(@"%@, %@, %@", image, title, contents);
+    
     NSDateFormatter * time = [[NSDateFormatter alloc]init];
     [time setDateFormat:@"yyMMddHHmmss"];
     NSString * curDateTime = [time stringFromDate:[NSDate date]];
     NSLog(@"Current Time: %@", curDateTime);
     NSString * fileName = curDateTime;
     
-    NSString * stringUrl = @"http://localhost:8080/";
+    NSString * stringUrl = @"http://localhost:8080/new.json";
+    NSURL * submitUrl = [NSURL URLWithString:stringUrl];
+    NSMutableURLRequest * submitRequest = [NSMutableURLRequest requestWithURL:submitUrl];
+    [submitRequest setHTTPMethod:@"POST"]; // default는 GET
+    
+    NSString * splitter = @"----------SECTION END-----------";
+    NSString * contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", splitter];
+    [submitRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
+    
+    NSMutableData * postBody = [NSMutableData data];
+    
+    [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", splitter] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"title\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"%@\r\n", title] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", splitter] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"contents\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"%@\r\n", contents] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSData *imgData = UIImageJPEGRepresentation(image, 1.0);
+    if(imgData){
+        [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", splitter] dataUsingEncoding:NSUTF8StringEncoding]];
+        [postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"fileName\"; filename=\"%@.jpg\"\r\n", fileName] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        [postBody appendData:[@"Content-Type: image/jpg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        [postBody appendData:imgData];
+        [postBody appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    [postBody appendData:[[NSString stringWithFormat:@"--%@--\r\n", splitter] dataUsingEncoding:NSUTF8StringEncoding]];
+    [submitRequest setHTTPBody:postBody];
+        
+    NSHTTPURLResponse *submitResponse;
+    NSError *submitError;
+    NSData *submitResult = [NSURLConnection sendSynchronousRequest:submitRequest returningResponse:&submitResponse error:&submitError];
+//    NSLog(@"%@", postBody);
+    NSLog(@"submit response = %d", submitResponse.statusCode);
+    NSLog(@"submit response = %@", submitResponse.URL);
+
 }
+*/
+
+
+
+-(void)sendNewPost:(UIImage *)image Title:(NSString *)title withContents:(NSString *)contents {
+    NSDateFormatter *time = [[NSDateFormatter alloc]init];
+    [time setDateFormat:@"yyMMddHHmmss"];
+    NSString *curDatetime = [time stringFromDate:[NSDate date]];
+    NSString* imgName = curDatetime;
+    NSLog(@"현재시간은!!!%@ 파일이름은 %@", curDatetime, imgName);
+    
+    NSString *submitURLString = @"http://localhost:8080/new.json";
+    NSURL *submitURL = [NSURL URLWithString:submitURLString];
+    NSMutableURLRequest *submitRequest = [NSMutableURLRequest requestWithURL:submitURL];
+    [submitRequest setHTTPMethod:@"POST"]; // default는 GET
+    
+    NSString *stringBoundary = @"------dnsjgysmssjanrnlduqek------";
+    NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@", stringBoundary];
+    [submitRequest setValue:contentType forHTTPHeaderField:@"Content-Type"];
+    
+    NSMutableData *postBody = [NSMutableData data];
+    
+    [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"title\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"%@\r\n", title] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"contents\"\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    [postBody appendData:[[NSString stringWithFormat:@"%@\r\n", contents] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+    NSData *imgData = UIImageJPEGRepresentation(image, 1.0);
+    if(imgData){
+        [postBody appendData:[[NSString stringWithFormat:@"--%@\r\n", stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+        [postBody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"photoFile\"; filename=\"%@.jpg\"\r\n", imgName] dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        [postBody appendData:[@"Content-Type: image/jpg\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        [postBody appendData:imgData];
+        [postBody appendData:[@"Content-Transfer-Encoding: binary\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        [postBody appendData:[[NSString stringWithFormat:@"\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    [postBody appendData:[[NSString stringWithFormat:@"--%@--\r\n", stringBoundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [submitRequest setHTTPBody:postBody];
+    
+    NSHTTPURLResponse *submitResponse;
+    NSError *submitError;
+    NSData *submitResult = [NSURLConnection sendSynchronousRequest:submitRequest returningResponse:&submitResponse error:&submitError];
+    NSLog(@"submit response = %d", submitResponse.statusCode); //통신 성공여부
+
+}
+
 
 @end
